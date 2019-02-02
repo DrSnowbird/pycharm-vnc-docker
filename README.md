@@ -1,4 +1,4 @@
-# PyCharm IDE in a Docker container
+# PyCharm IDE in a VNC/noVNC-based Docker container
 
 [![](https://images.microbadger.com/badges/image/openkbs/pycharm-docker.svg)](https://microbadger.com/images/openkbs/pycharm-docker "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/openkbs/pycharm-docker.svg)](https://microbadger.com/images/openkbs/pycharm-docker "Get your own version badge on microbadger.com")
 
@@ -47,7 +47,7 @@ You can build your own image locally.
 # (Optional) Making plugins persist between sessions
 If you run "./run.sh" instead of "docker-compose up", **you don't have to do anything as below**.
 
-PyCharm configurations are kept on `$HOME/PyCharmCE2018.1` inside the container, so if you
+PyCharm configurations are kept on `$HOME/PyCharmCE2018.[N]` inside the container, so if you
 want to keep them around after you close it, you'll need to share it with your
 host.
 
@@ -56,24 +56,34 @@ For example: (Version might be different - use run.sh instead)
 ```
 docker run -ti --rm \
            -e DISPLAY=$DISPLAY \
-           -v /tmp/.X11-unix:/tmp/.X11-unix \
-           -v $HOME/PyCharmCE2018.1:/home/developer/PyCharmCE2018.1 \
+           -v $HOME/PyCharmCE2018.[N]:/home/developer/PyCharmCE2018.[N] \
            -v `pwd`:/home/developer/workspace \
            openkbs/PyCharm-docker
 ```
 
-# See Also - Docker-based IDE
+# See also X11 and VNC/noVNC docker-based IDE collections
 * [openkbs/docker-atom-editor](https://hub.docker.com/r/openkbs/docker-atom-editor/)
-* [openkbs/eclipse-photon-docker](https://hub.docker.com/r/openkbs/eclipse-photon-docker/)
 * [openkbs/eclipse-oxygen-docker](https://hub.docker.com/r/openkbs/eclipse-oxygen-docker/)
+* [openkbs/eclipse-phonto-vnc-docker](https://cloud.docker.com/u/openkbs/repository/docker/openkbs/eclipse-photon-vnc-docker)
+* [openkbs/eclipse-photon-docker](https://hub.docker.com/r/openkbs/eclipse-photon-docker/)
+* [openkbs/eclipse-photon-vnc-docker](https://hub.docker.com/r/openkbs/eclipse-photon-vnc-docker/)
 * [openkbs/intellj-docker](https://hub.docker.com/r/openkbs/intellij-docker/)
-* [openkbs/netbeans9-docker](https://hub.docker.com/r/openkbs/netbeans9-docker/)
+* [openkbs/intellj-vnc-docker](https://hub.docker.com/r/openkbs/intellij-vnc-docker/)
+* [openkbs/knime-vnc-docker](https://cloud.docker.com/u/openkbs/repository/docker/openkbs/knime-vnc-docker)
+* [openkbs/knime-vnc-docker](https://hub.docker.com/r/openkbs/knime-vnc-docker/)
+* [openkbs/mysql-workbench-vnc-docker](https://cloud.docker.com/u/openkbs/repository/docker/openkbs/mysql-workbench-vnc-docker)
+* [openkbs/netbeans10-docker](https://hub.docker.com/r/openkbs/netbeans10-docker/)
 * [openkbs/netbeans](https://hub.docker.com/r/openkbs/netbeans/)
 * [openkbs/papyrus-sysml-docker](https://hub.docker.com/r/openkbs/papyrus-sysml-docker/)
 * [openkbs/pycharm-docker](https://hub.docker.com/r/openkbs/pycharm-docker/)
+* [openkbs/pycharm-vnc-docker](https://cloud.docker.com/u/openkbs/repository/docker/openkbs/pycharm-vnc-docker)
+* [openkbs/rapidminer-docker](https://cloud.docker.com/u/openkbs/repository/docker/openkbs/rapidminer-docker)
 * [openkbs/scala-ide-docker](https://hub.docker.com/r/openkbs/scala-ide-docker/)
 * [openkbs/sublime-docker](https://hub.docker.com/r/openkbs/sublime-docker/)
 * [openkbs/webstorm-docker](https://hub.docker.com/r/openkbs/webstorm-docker/)
+* [openkbs/webstorm-vnc-docker](https://cloud.docker.com/u/openkbs/repository/docker/openkbs/webstorm-vnc-docker)
+* [openkbs/webstorm-vnc-docker](https://hub.docker.com/r/openkbs/webstorm-vnc-docker/)
+* [openkbs/rest-dev-vnc-docker](https://cloud.docker.com/u/openkbs/repository/docker/openkbs/rest-dev-vnc-docker)
 
 # See Also - Docker-based SQL GUI
 * [Sqlectron SQL GUI at openkbs/sqlectron-docker](https://hub.docker.com/r/openkbs/sqlectron-docker/)
