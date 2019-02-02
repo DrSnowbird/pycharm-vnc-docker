@@ -1,0 +1,24 @@
+version: '3' 
+services:
+  pycharm-vnc-docker:
+    image: openkbs/pycharm-vnc-docker
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: pycharm-vnc-docker
+    environment:
+      - USER_ID=${USER_ID:-1000}
+      - GROUP_ID=${GROUP_ID:-1000}
+    env_file:
+      - ./.env
+    ports:
+      - 5901:5901
+      - 6901:5601
+    volumes:
+      - ./PycharmProjects:/home/developer/PycharmProjects
+      - ./.PyCharmCE2018.3:/home/developer/.PyCharmCE2018.3
+      - ./.profile:/home/developer/.profile  
+      - ./.java:/home/developer/.java
+      - ./data:/home/developer/data
+      - ./workspace:/home/developer/workspace
+
