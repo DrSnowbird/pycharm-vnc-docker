@@ -20,6 +20,11 @@ This image contains [Oracle JDK 8](http://www.oracle.com/technetwork/java/javase
 * VNC/noVNC for remote Desktop over Container Platform (Openshift, Kubernetes, etc.) 
 
 # Run (recommended for easy-start)
+It's highly recommended to change tvnc password to prevent others usign the default password to get into your container, modify the file "docker.env" as below and save the filw before you hit, "./run.sh":
+```
+#### ---- VNC Password ----
+VNC_PW=MySuperStrongPassword
+```
 * Once the above build is done, you can run IntelliJ now using the command below.
 ```
 ./run.sh
