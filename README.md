@@ -13,21 +13,26 @@ This image contains [Oracle JDK 8](http://www.oracle.com/technetwork/java/javase
   Java(TM) SE Runtime Environment (build 1.8.0_201-b09)
   Java HotSpot(TM) 64-Bit Server VM (build 25.201-b09, mixed mode)
 * Apache Maven 3.6.0
-* Python 3.5.2
-* node v11.7.0 + npm 6.5.0 (from NodeSource official Node Distribution)
+* Python 3.5 + 2.7
+* Pip 19.0
+* npm 6.5 + node v11.8 (from NodeSource official Node Distribution)
 * Gradle 5.1
 * Other tools: git wget unzip vim python python-setuptools python-dev python-numpy 
 * VNC/noVNC for remote Desktop over Container Platform (Openshift, Kubernetes, etc.) 
 
 # Run (recommended for easy-start)
-It's highly recommended to change tvnc password to prevent others usign the default password to get into your container, modify the file "docker.env" as below and save the filw before you hit, "./run.sh":
+It's highly recommended to change vnc password to prevent others using the default password to get into your container, modify the file "**./docker.env**" as below and save the file before you hit, "**./run.sh**":
 ```
 (./docker.env) file:
 
-#### ---- VNC Password ----
-VNC_PW=MySuperStrongPassword
+#### ---- VNC Password: ----
+VNC_PW=VeryEtrongPasswordHere
+
+#### ---- VNC Resolution (1280x800, 1920x1080, etc.): ----
+VNC_RESOLUTION=1920x1080
+
 ```
-* Once the above build is done, you can run IntelliJ now using the command below.
+* Once the above update is done, you can now run the command below.
 ```
 ./run.sh
 ```
@@ -86,7 +91,6 @@ docker run --rm -it
 * [openkbs/intellj-docker](https://hub.docker.com/r/openkbs/intellij-docker/)
 * [openkbs/intellj-vnc-docker](https://hub.docker.com/r/openkbs/intellij-vnc-docker/)
 * [openkbs/knime-vnc-docker](https://cloud.docker.com/u/openkbs/repository/docker/openkbs/knime-vnc-docker)
-* [openkbs/knime-vnc-docker](https://hub.docker.com/r/openkbs/knime-vnc-docker/)
 * [openkbs/mysql-workbench-vnc-docker](https://cloud.docker.com/u/openkbs/repository/docker/openkbs/mysql-workbench-vnc-docker)
 * [openkbs/netbeans10-docker](https://hub.docker.com/r/openkbs/netbeans10-docker/)
 * [openkbs/netbeans](https://hub.docker.com/r/openkbs/netbeans/)
@@ -98,7 +102,6 @@ docker run --rm -it
 * [openkbs/sublime-docker](https://hub.docker.com/r/openkbs/sublime-docker/)
 * [openkbs/webstorm-docker](https://hub.docker.com/r/openkbs/webstorm-docker/)
 * [openkbs/webstorm-vnc-docker](https://cloud.docker.com/u/openkbs/repository/docker/openkbs/webstorm-vnc-docker)
-* [openkbs/webstorm-vnc-docker](https://hub.docker.com/r/openkbs/webstorm-vnc-docker/)
 * [openkbs/rest-dev-vnc-docker](https://cloud.docker.com/u/openkbs/repository/docker/openkbs/rest-dev-vnc-docker)
 
 # See Also - Docker-based SQL GUI
