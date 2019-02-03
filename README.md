@@ -22,6 +22,8 @@ This image contains [Oracle JDK 8](http://www.oracle.com/technetwork/java/javase
 # Run (recommended for easy-start)
 It's highly recommended to change tvnc password to prevent others usign the default password to get into your container, modify the file "docker.env" as below and save the filw before you hit, "./run.sh":
 ```
+(./docker.env) file:
+
 #### ---- VNC Password ----
 VNC_PW=MySuperStrongPassword
 ```
